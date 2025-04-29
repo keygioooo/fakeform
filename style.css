@@ -1,0 +1,143 @@
+
+/* Stili Generali */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font moderno */
+    background-color: #f4f7f6; /* Sfondo leggermente grigio */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altezza minima per centrare verticalmente */
+    box-sizing: border-box;
+}
+
+/* Contenitore del Form */
+form[name="signin"] {
+    background-color: #ffffff; /* Sfondo bianco per il form */
+    padding: 30px 40px;
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra leggera */
+    max-width: 500px; /* Larghezza massima per leggibilità */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Stile Intestazione (Opzionale, se vuoi stilare anche l'h1 fuori dal form) */
+header h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Spazio sotto il titolo */
+}
+
+/* Stili per Input e Textarea */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+textarea[name="about"] {
+    display: block; /* Un elemento per riga */
+    width: 100%; /* Larghezza piena */
+    padding: 12px 15px; /* Padding interno */
+    margin-bottom: 15px; /* Spazio tra gli elementi */
+    border: 1px solid #ccc; /* Bordo sottile grigio */
+    border-radius: 4px; /* Bordi arrotondati */
+    box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+    font-size: 1rem; /* Dimensione font */
+    transition: border-color 0.3s ease; /* Transizione per focus */
+}
+
+/* Stile specifico per Textarea */
+textarea[name="about"] {
+    min-height: 80px; /* Altezza minima */
+    resize: vertical; /* Permette solo il ridimensionamento verticale */
+}
+
+/* Stile al focus */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+textarea[name="about"]:focus {
+    border-color: #007bff; /* Colore del bordo al focus (blu) */
+    outline: none; /* Rimuove l'outline di default */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Ombra leggera al focus */
+}
+
+/* Rimuove il <br/> (non ideale per layout, meglio usare margini) */
+form[name="signin"] br {
+    display: none;
+}
+
+/* Stili per i Bottoni */
+button[type="submit"],
+button[type="reset"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px; /* Spazio sopra i bottoni */
+    margin-right: 10px; /* Spazio tra i bottoni */
+}
+
+/* Bottone Submit (Go) */
+button[type="submit"] {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838; /* Verde più scuro al hover */
+    transform: translateY(-1px); /* Leggero effetto al hover */
+}
+
+/* Bottone Reset */
+button[type="reset"] {
+    background-color: #dc3545; /* Rosso */
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333; /* Rosso più scuro al hover */
+    transform: translateY(-1px); /* Leggero effetto al hover */
+}
+
+/* Responsive Design - Adattamenti per schermi piccoli */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Meno padding sul corpo */
+        align-items: flex-start; /* Allinea in alto su mobile */
+    }
+
+    form[name="signin"] {
+        padding: 20px; /* Meno padding nel form */
+        margin-top: 20px; /* Spazio dall'alto */
+    }
+
+    header h1 {
+         font-size: 1.5rem; /* Titolo più piccolo */
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+        width: calc(50% - 5px); /* Bottoni affiancati, con piccolo spazio */
+        margin-right: 0; /* Rimuove margine destro */
+        box-sizing: border-box;
+    }
+
+    /* Assicura che il secondo bottone vada a capo se necessario o si affianchi */
+     button[type="reset"] {
+         /* Nessuna regola specifica aggiuntiva necessaria con width 50% */
+     }
+      /* Se vuoi forzarli uno sotto l'altro su mobile, usa:
+       button[type="submit"],
+       button[type="reset"] {
+           width: 100%;
+           margin-right: 0;
+           margin-bottom: 10px;
+       }
+       button[type="reset"] {
+           margin-bottom: 0;
+       }
+      */
+}
